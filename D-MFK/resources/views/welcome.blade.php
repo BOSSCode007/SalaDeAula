@@ -43,16 +43,17 @@
         <section id="services" class="services">
             <h2>Nossos Serviços</h2>
             <div class="service-item">
-                <h3>Agendamento Rápido</h3>
-                <p>Reserve salas de reunião em segundos com nossa interface intuitiva.</p>
-            </div>
-            <div class="service-item">
                 <h3>Notificações em Tempo Real</h3>
                 <p>Receba atualizações instantâneas sobre o status das suas reservas.</p>
             </div>
             <div class="service-item">
                 <h3>Gestão de Espaços</h3>
                 <p>Gerencie todos os seus espaços de reunião em um único lugar.</p>
+            </div>
+            <div class="service-item">
+                <h3>Agendamento Rápido</h3>
+                <p>Reserve salas de reunião em segundos com nossa interface intuitiva.</p>
+                <button id="agendar">Agendar</button>
             </div>
         </section>
 
@@ -69,9 +70,9 @@
         </section>
         
         <section id="contact" class="contact">
-            <h2>Contato</h2>
+            <h2>Contato</h2><br>
             <p>Entre em contato conosco para saber mais sobre nossos serviços e como podemos ajudar sua empresa a gerenciar
-                suas salas de reunião de forma mais eficiente.</p>
+                suas salas de reunião de forma mais eficiente.</p><br>
                 <form>
                     <input type="text" placeholder="Seu Nome" required>
                     <input type="email" placeholder="Seu Email" required>
@@ -85,7 +86,6 @@
         <p>&copy; 2025 D-AFK. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="apps.js"></script>
 </body>
-
 </html>
