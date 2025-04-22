@@ -79,7 +79,7 @@ document.getElementById("agendar").addEventListener("click", function () {
                 </table>
 
                 <!-- Botão de voltar atualizado -->
-                <button class="voltar" onclick="window.location.href='dmfk.html'">Voltar à Página Inicial</button>
+                <button class="voltar" onclick="window.open(document.referrer,'_self');'">Voltar à Página Inicial</button>
             </div>
 
             <script>
