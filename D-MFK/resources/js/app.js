@@ -28,117 +28,100 @@ document.getElementById("agendar").addEventListener("click", function () {
     var novaPagina = window.open("", "_blank");
 
     novaPagina.document.write(`
-        <!DOCTYPE html>
-        <html lang="pt-BR">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Agendamento de Sala</title>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; text-align: center; }
-                .container { max-width: 800px; margin: auto; }
-                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                th, td { border: 1px solid black; padding: 10px; text-align: center; }
-                .disponivel { background-color: lightgreen; }
-                .indisponivel { background-color: lightcoral; }
-                .horarios-header { background-color: #333; color: white; }
-                button { padding: 6px; cursor: pointer; margin: 2px; border: none; }
-                .delete { background-color: red; color: white; }
-                .voltar { background-color: #333; color: white; padding: 10px; margin-top: 20px; cursor: pointer; }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h2>Agendar Sala</h2>
-                <form id="agendamento-form">
-                    <label for="sala">Escolha a Sala:</label>
-                    <select id="sala" required>
-                        <option value="Sala de Leitura">Sala de Leitura</option>
-                        <option value="Sala de Reunião">Sala de Reunião</option>
-                        <option value="Sala de Computação">Sala de Computação</option>
-                    </select>
+             <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Sala</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        .disponivel { background-color: lightgreen; }
+        .indisponivel { background-color: lightcoral; }
+        .horarios-header { background-color: #333; color: white; }
+        button { padding: 6px; cursor: pointer; margin: 2px; border: none; }
+        .delete { background-color: red; color: white; }
+        .filter-btn { background-color:rgb(0, 0, 0); color: white; padding: 10px; margin: 5px; cursor: pointer; }
+        header { position: absolute; top: 10px; left: 20px;z-index: 10;display: flex;align-items: center;justify-content: space-between; width: calc(100% - 40px); }
+        .logo-img {width: 150px; height: auto;}
+        footer {text-align: center;padding: 5px;background-color: #111; color: #F4F4F4;}
+        .agenda {width: 100%;border-collapse: collapse;margin-top: 30px;}
+        .agenda thead th {background-color:rgb(0, 0, 0);color: #F4F4F4;text-align: center;padding: 10px; font-weight: bold; border: 1px solid black;}
+        .agenda tbody td {height: 50px; border: 1px solid black;text-align: center;}
+        .agenda tbody td:first-child {font-weight: bold;}
+        .container { display: flex;justify-content: space-between;}
+    </style>
+    <header>
+        <img src="dmfk.png" alt="Logo D-MFK" class="logo-img">
+    </header>
+</head>
+    <body>
+    <div class="container">
+        <div>
+            <h2>Agendar Sala</h2>
+            <label for="sala">Escolha a Sala:</label>
+            <select id="sala" name="sala">
+                <option value="leitura">Sala de Leitura</option>
+            </select>
+            <br><br>
+            <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+            <br><br>
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario" name="horario"><br><br>
+            <button>Confirmar Agendamento</button>
+        </div>
 
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" required>
+        <div>
+            <h2>Filtrar Reservas</h2>
+            <input type="radio" id="todas" name="filtro" value="todas">
+            <label for="todas">Todas</label>
+            <input type="radio" id="reservadas" name="filtro" value="reservadas">
+            <label for="reservadas">Reservadas</label>
+        </div>
+    </div>
+        <table class="agenda">
+      <thead>
+        <tr>
+          <th>
+          <th>SEGUNDA <br></th>
+          <th>TERÇA <br> </th>
+          <th>QUARTA <br></th>
+          <th>QUINTA <br></th>
+          <th>SEXTA <br></th>
+          <th>SÁBADO <br></th>
+          <th>DOMINGO <br></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>06:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>07:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>08:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>09:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>10:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>12:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>13:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>14:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>15:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>16:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>17:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>18:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>19:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>20:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>21:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <br><br>
+    <footer>
+        <p>&copy; 2025 D-AFK. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
 
-                    <label for="horario">Horário:</label>
-                    <input type="time" id="horario" required>
-
-                    <button type="submit">Confirmar Agendamento</button>
-                </form>
-
-                <h2>Horários Agendados</h2>
-                <table id="horariosTable">
-                    <tr class="horarios-header">
-                        <th>Data</th>
-                        <th>Horário</th>
-                        <th>Sala</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </table>
-
-                <!-- Botão de voltar atualizado -->
-                <button class="voltar" onclick="window.open(document.referrer,'_self');'">Voltar à Página Inicial</button>
-            </div>
-
-            <script>
-                function preencherTabela() {
-                    let tabela = document.getElementById("horariosTable");
-                    let agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-
-                    tabela.innerHTML = "<tr class='horarios-header'><th>Data</th><th>Horário</th><th>Sala</th><th>Status</th><th>Ações</th></tr>";
-
-                    agendamentos.forEach((agendamento, index) => {
-                        let linha = tabela.insertRow();
-                        linha.insertCell(0).innerText = agendamento.data;
-                        linha.insertCell(1).innerText = agendamento.horario;
-                        linha.insertCell(2).innerText = agendamento.sala;
-                        linha.insertCell(3).innerText = "Indisponível";
-                        linha.cells[3].classList.add("indisponivel");
-
-                        let botaoExcluir = document.createElement("button");
-                        botaoExcluir.innerText = "Excluir";
-                        botaoExcluir.classList.add("delete");
-                        botaoExcluir.onclick = function () {
-                            excluirAgendamento(index);
-                        };
-
-                        linha.insertCell(4).appendChild(botaoExcluir);
-                    });
-                }
-
-                function excluirAgendamento(index) {
-                    let agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-                    agendamentos.splice(index, 1);
-                    localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
-                    preencherTabela();
-                }
-
-                document.getElementById("agendamento-form").addEventListener("submit", function (event) {
-                    event.preventDefault();
-
-                    let sala = document.getElementById("sala").value;
-                    let data = document.getElementById("data").value;
-                    let horario = document.getElementById("horario").value;
-
-                    if (!data || !horario) {
-                        alert("Por favor, preencha todos os campos.");
-                        return;
-                    }
-
-                    let agendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
-                    agendamentos.push({ sala, data, horario });
-
-                    localStorage.setItem("agendamentos", JSON.stringify(agendamentos));
-                    alert("Agendamento realizado com sucesso!");
-
-                    preencherTabela();
-                });
-
-                window.onload = preencherTabela;
-            </script>
-        </body>
-        </html>
     `);
 });
