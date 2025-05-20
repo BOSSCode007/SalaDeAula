@@ -30,8 +30,17 @@ class reservaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $reservations = new reservations();
+        $reservations->aula = $request->aula;
+        $reservations->data = $request->data;
+        $reservations->horario = $request->horario;
+        $reservations->professor = $request->professor;
+       
+        $reservations->save();
+        
+        return redirect()->route('reservations.index')->with('success', 'Reserva criada com sucesso!');
+        
     }
 
     /**

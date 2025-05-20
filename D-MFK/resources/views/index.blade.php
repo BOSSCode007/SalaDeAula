@@ -1,3 +1,9 @@
+
 @foreach ($reservations as $reservation )
-    {{ $reservation->professor}}
+    {{ $reservation->aula }}
+    {{ $reservation->data }}
+    {{ $reservation->horario }}
+    {{ $reservation->professor }}
 @endforeach
+
+<a href="{{ route('reservations.create')}}"> Voltar <a/>;

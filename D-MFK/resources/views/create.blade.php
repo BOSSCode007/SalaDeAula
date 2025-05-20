@@ -1,33 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sistema de Reserva de Sala de Aula</title>
-  <link rel="stylesheet" href="style.css">
-  @vite(['resources/css/detalhes.css', 'resources/js/detalhes.js'])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    @vite(['resources/css/detalhes.css', 'resources/js/detalhes.js'])
+
+    <title>Formulário</title>
 </head>
 <body>
-  <header>
-    <div class="logo">SISTEMA DE RESERVA DE SALA DE AULA</div>
-    <div>D-MFK</div>
-  </header>
+    <Form action="{{ route('reservations.store') }}" method="post">
+    @csrf
+        <input type="text" name="aula">
+        <input type="date" name="data">
+        <input type="time" name="horario">
+        <input type="text" name="professor">
+        <button class="btn btn-edit">Salvar</button>
+    </Form>
 
-  <div class="modal">
-    <span class="close">&times;</span>
-    <h2>DETALHES DA RESERVA</h2>
-    <p>Aula: <span></span></p>
-    <p>________________________________________________________</p>
-    <p>Data: <span></span></p>
-    <p>________________________________________________________</p>
-    <p>Horário: <span></span></p>
-    <p>________________________________________________________</p>
-    <p>Professor: <span></span></p>
-    <p>________________________________________________________</p>
-
-    <div class="buttons">
-      <button class="btn btn-edit">EDITAR</button>
-      <button class="btn btn-cancel">CANCELAR</button>
-    </div>
-  </div>
+    
 </body>
 </html>

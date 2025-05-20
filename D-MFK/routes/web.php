@@ -10,6 +10,4 @@ Route::get('/', function () {
 });
 
 Route::get('/test', [TestController:: class, 'test'])->name('test');
-Route::get('/detalhes', [novaController::class, 'detalhes'])->name('detalhes');
-
 Route::resource('reservations', reservaController::class);
