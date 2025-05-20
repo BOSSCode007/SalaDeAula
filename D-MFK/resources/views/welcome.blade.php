@@ -53,7 +53,7 @@
             <div class="service-item">
                 <h3>Agendamento Rápido</h3>
                 <p>Reserve salas de reunião em segundos com nossa interface intuitiva.</p>
-                <a href="{{ route('reservations.create')}}">Agendar</a>
+                <a class="btn" href="{{ route('reservations.create')}}">Agendar</a>
             </div>
         </section>
 

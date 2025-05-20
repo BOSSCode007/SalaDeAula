@@ -48,7 +48,7 @@ class reservaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        echo'Here';
     }
 
     /**
@@ -56,7 +56,10 @@ class reservaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $reservations = new reservations();
+        $reservations = $reservations->where('id', $id)->first();
+
+        return view('create', compact(['reservations']));
     }
 
     /**
@@ -64,7 +67,16 @@ class reservaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $reservation = reservations::where('id', $id)->first();
+
+        $reservation->aula = $request->aula;
+        $reservation->data = $request->data;
+        $reservation->horario = $request->horario;
+        $reservation->professor = $request->professor;
+
+        $reservation->save();
+
+        return redirect()->route('reservations.index');
     }
 
     /**
@@ -72,6 +84,10 @@ class reservaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $reservations = new reservations();
+        $reservations = $reservations->where('id', $id)->first();
+        $reservations->delete();
+        return redirect()->route('reservations.index');
+        
     }
 }
