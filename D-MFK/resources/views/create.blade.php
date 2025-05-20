@@ -18,6 +18,7 @@
         <button class="btn btn-edit">Salvar</button>
     </Form>
 
+    <a href="{{ route('welcome')}}"> Voltar <a/>;
     
 </body>
 </html>

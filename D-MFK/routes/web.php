@@ -7,7 +7,7 @@ use App\Http\Controllers\reservaController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/test', [TestController:: class, 'test'])->name('test');
 Route::resource('reservations', reservaController::class);

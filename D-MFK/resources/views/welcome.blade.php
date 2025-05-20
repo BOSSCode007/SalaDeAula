@@ -53,7 +53,7 @@
             <div class="service-item">
                 <h3>Agendamento Rápido</h3>
                 <p>Reserve salas de reunião em segundos com nossa interface intuitiva.</p>
-                <button id="agendar">Agendar</button>
+                <a href="{{ route('reservations.create')}}">Agendar</a>
             </div>
         </section>
 
@@ -77,7 +77,7 @@
                     <input type="text" placeholder="Seu Nome" required>
                     <input type="email" placeholder="Seu Email" required>
                     <textarea placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit">Enviar</button>
+                    <button type="submit" >Enviar</button>
                 </form>
             </section>
         </section>
