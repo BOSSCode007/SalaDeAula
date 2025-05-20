@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reserva de Sala de Aula</title>
+    <link rel="stylesheet" href="style.css">
+    @vite(['resources/css/detalhes.css', 'resources/js/detalhes.js'])
+</head>
+<body>
+    <header>
+    <h1> SISTEMA DE RESERVA DE SALA DE AULA </h1>
+    </header>
+    <div class="gatinho">
+        <form action="{{ isset($reservations) ? 
+        route('reservations.update', ['reservation' => $reservations->id]) : 
+        route('reservations.store') }}" method="POST">
+        @isset($reservations)
+            @method('PUT')
+        @endisset
+        @csrf
+            <input type="label" name="aula" value="{{ $reservations->aula ?? ''}}" placeholder="Aula"/>
+            <input type="date" name="data" value="{{ $reservations->data ?? ''}}" placeholder="Data"/>
+            <input type="time" name="horario" value="{{ $reservations->horario ?? ''}}" placeholder="Horário"/>
+            <input type="text" name="professor" value="{{ $reservations->professor ?? ''}}" placeholder="Professor"/>
+            <button class="btn btn-edit">Salvar</button>
+            <a class="btn" href="{{ route('welcome')}}">Voltar</a>
+        </form>
+    </div>
+    </main>
+</body>
+</html>
+
+
+

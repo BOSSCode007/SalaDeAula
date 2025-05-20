@@ -32,10 +32,9 @@ class reservaController extends Controller
     public function store(Request $request)
     {   
         $reservations = new reservations();
-        $reservations->aula = $request->aula;
-        $reservations->data = $request->data;
-        $reservations->horario = $request->horario;
-        $reservations->professor = $request->professor;
+        $reservations->sala = $request->sala;
+        $reservations->dataInicio = $request->dataInicio;
+        $reservations->dataFinal = $request->dataFinal;
        
         $reservations->save();
         
@@ -69,10 +68,9 @@ class reservaController extends Controller
     {
         $reservation = reservations::where('id', $id)->first();
 
-        $reservation->aula = $request->aula;
-        $reservation->data = $request->data;
-        $reservation->horario = $request->horario;
-        $reservation->professor = $request->professor;
+        $reservation->sala = $request->sala;
+        $reservation->dataInicio = $request->dataInicio;
+        $reservation->dataFinal = $request->dataFinal;
 
         $reservation->save();
 
